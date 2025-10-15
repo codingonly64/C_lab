@@ -186,10 +186,9 @@ void deleteAtBtw()
 int menu()
 {
     int choice;
-
     while (1)
     {
-        printf("\n\n  Menu  \n1. Display \n2.Insert at begin \n3. Insert at end \n4. Insert in between \n5. Delete at begin \n6. Delete at end \n7. Delete in between \n8. Exit\n");
+        printf("\n\n  Menu  \n1. Display \n2. Insert at begin \n3. Insert at end \n4. Insert in between \n5. Delete at begin \n6. Delete at end \n7. Delete in between \n8. Exit\n");
         printf("\nEnter the choice: ");
         scanf("%d", &choice);
         switch (choice)
