@@ -7,10 +7,10 @@ void enqueue()
 {
     if (rear == size - 1)
     {
-        printf("\nQueue is full!!");
+        printf("Overflow!!");
         return;
     }
-    printf("\nEnter the element to be inserted: ");
+    printf("Enter the element to be inserted: ");
     scanf("%d", &item);
     front = 0;
     rear++;
@@ -22,11 +22,11 @@ void dequeue()
 {
     if (-1 == front || front > rear)
     {
-        printf("\nQueue is empty!!");
+        printf("Underflow!!");
         return;
     }
     item = queue[front];
-    printf("\nDeleted element is %d", item);
+    printf("Deleted element is %d", item);
     if (front == rear)
         front = rear - 1;
     else
@@ -37,30 +37,29 @@ void display()
 {
     if (rear == -1)
     {
-        printf("\nQueue is empty!!");
+        printf("Underflow!!");
         return;
     }
-    printf("\nQueue elements are: ");
+    printf("Queue elements are: ");
     for (i = front; i <= rear; i++)
         printf("\t%d", queue[i]);
-    printf("\n");
 }
 
 void peek()
 {
     if (-1 == front)
     {
-        printf("\nQueue is empty!!");
+        printf("Underflow!!");
         return;
     }
-    printf("\nPeek element is %d", queue[front]);
+    printf("Peek element is %d", queue[front]);
 }
 
 void menu()
 {
+        printf("\nMenu  \n1. Enqueue \n2. Dequeue \n3. Display \n4. Peek \n5. Exit\n");
     while (1)
     {
-        printf("\n\n\n  Menu  \n1. Enqueue \n2. Dequeue \n3. Display \n4. Peek \n5. Exit\n");
         printf("\nEnter your choice:");
         scanf("%d", &choice);
         switch (choice)

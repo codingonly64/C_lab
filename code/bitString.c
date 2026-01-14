@@ -5,26 +5,26 @@ int a[] = {0, 0, 0, 0, 0, 0, 0, 0, 0}, b[] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 void input()
 {
     int size, val, i;
-    printf("\nEnter the size of 1st set:");
+    printf("Enter the size of 1st set:");
     scanf("%d", &size);
     for (i = 0; i < size; i++)
     {
-        printf("\nEnter the elements of %d: ", i + 1);
+        printf("Enter the elements of %d: ", i + 1);
         scanf("%d", &val);
         a[val - 1] = 1;
     }
 
-    printf("\nEnter the size of 2st set:");
+    printf("Enter the size of 2st set:");
     scanf("%d", &size);
     for (i = 0; i < size; i++)
     {
-        printf("\nEnter the elements of %d: ", i + 1);
+        printf("Enter the elements of %d: ", i + 1);
         scanf("%d", &val);
         b[val - 1] = 1;
     }
 
     // print the elements
-    printf("\n1st set :");
+    printf("1st set :");
     for (i = 0; i < 9; i++)
     {
         printf("%d\t", a[i]);
@@ -39,7 +39,7 @@ void input()
 void output(int c[])
 {
     int i;
-    printf("\n Set is ");
+    printf("\nSet is \t");
     for (i = 0; i < 9; i++)
     {
         if (c[i] != 0)
@@ -57,10 +57,9 @@ void setUnion()
         else
             c[i] = a[i];
     }
+    printf("Bit String is");
     for (i = 0; i < 9; i++)
-    {
-        printf("%d\t", c[i]);
-    }
+        printf("\t%d", c[i]);
     output(c);
 }
 
@@ -74,6 +73,7 @@ void intersection()
         else
             c[i] = 0;
     }
+    printf("Bit String is");
     for (i = 0; i < 9; i++)
     {
         printf("%d\t", c[i]);
@@ -91,6 +91,7 @@ void difference()
         else
             c[i] = 0;
     }
+    printf("Bit String is");
     for (i = 0; i < 9; i++)
     {
         printf("%d\t", c[i]);
@@ -101,9 +102,9 @@ void difference()
 int main()
 {
     int choice;
+    printf("\n  MENU  \n1. Input\n2. Union\n3. Intersection\n4. Difference\n5. Exit");
     do
     {
-        printf("\n\n  MENU  \n1.Input\n2. Union\n3. Intersection\n4. Difference\n5. Exit\n");
         printf("\nEnter the choice: ");
         scanf("%d", &choice);
         switch (choice)
@@ -121,10 +122,10 @@ int main()
             difference();
             break;
         case 5:
-            printf("\nThanks for using!!\n");
+            printf("Thanks for using!!\n");
             return 0;
         default:
-            printf("\nInvalid choice!!");
+            printf("Invalid choice!!");
             break;
         }
     } while (1);

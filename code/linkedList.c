@@ -14,7 +14,7 @@ struct node *create()
     node1 *nptr = ((node1 *)malloc(sizeof(node1)));
     if (nptr == NULL)
     {
-        printf("\nOverflow!!");
+        printf("Overflow!!");
         return NULL;
     }
     return nptr;
@@ -25,10 +25,10 @@ void display()
     node1 *ptr = start;
     if (ptr == NULL)
     {
-        printf("\nUnderflow!!");
+        printf("Underflow!!");
         return;
     }
-    printf("\nElements are ");
+    printf("Elements are ");
     while (ptr != NULL)
     {
         printf("\t%d", ptr->data);
@@ -42,15 +42,15 @@ void insertAtBegin()
     node1 *nptr = create();
     if (nptr == NULL)
     {
-        printf("\nOverflow!!");
+        printf("Overflow!!");
         return;
     }
-    printf("\nEnter the element to be inserted: ");
+    printf("Enter the element to be inserted: ");
     scanf("%d", &val);
     nptr->data = val;
     nptr->link = start;
     start = nptr;
-    printf("\nElement inserted!!");
+    printf("Element inserted!!");
 }
 
 void insertAtEnd()
@@ -58,11 +58,11 @@ void insertAtEnd()
     node1 *nptr = create(), *temp;
     if (nptr == NULL)
     {
-        printf("\nOverflow!!");
+        printf("Overflow!!");
         return;
     }
     int val;
-    printf("\nEnter the element to be inserted: ");
+    printf("Enter the element to be inserted: ");
     scanf("%d", &val);
     nptr->data = val;
     nptr->link = NULL;
@@ -70,7 +70,7 @@ void insertAtEnd()
     while (temp->link != NULL)
         temp = temp->link;
     temp->link = nptr;
-    printf("\nElement inserted!!");
+    printf("Element inserted!!");
 }
 
 void insertAtBtw()
@@ -79,12 +79,12 @@ void insertAtBtw()
     int val, pos, i;
     if (nptr == NULL)
     {
-        printf("\nOverflow!!");
+        printf("Overflow!!");
         return;
     }
-    printf("\nEnter the element: ");
+    printf("Enter the element: ");
     scanf("%d", &val);
-    printf("\nEnter the position to inserted: ");
+    printf("Enter the position to inserted: ");
     scanf("%d", &pos);
     nptr->data = val;
     nptr->link = NULL;
@@ -103,14 +103,14 @@ void insertAtBtw()
         }
         if (temp == NULL)
         {
-            printf("\nOverflow!!");
+            printf("Overflow!!");
             free(nptr);
             return;
         }
         nptr->link = temp->link;
         temp->link = nptr;
     }
-    printf("\nElement inserted!!");
+    printf("Element inserted!!");
 }
 
 void deleteAtBegin()
@@ -118,13 +118,13 @@ void deleteAtBegin()
     node1 *temp;
     if (start == NULL)
     {
-        printf("\nUnderflow!!");
+        printf("Underflow!!");
         return;
     }
     temp = start;
     start = start->link;
     free(temp);
-    printf("\nElement deleted!!");
+    printf("Element deleted!!");
 }
 
 void deleteAtEnd()
@@ -132,15 +132,15 @@ void deleteAtEnd()
     node1 *temp, *prev;
     if (start == NULL)
     {
-        printf("\nUnderflow!!");
+        printf("Underflow!!");
         return;
     }
     temp = start;
-    if (temp->link == NULL) // Only one element in the list
+    if (temp->link == NULL) 
     {
         start = NULL;
         free(temp);
-        printf("\nElement deleted!!");
+        printf("Element deleted!!");
         return;
     }
 
@@ -151,20 +151,21 @@ void deleteAtEnd()
     }
     prev->link = NULL;
     free(temp);
-    printf("\nElement deleted!!");
+    printf("Element deleted!!");
 }
 
 void deleteAtBtw()
 {
     node1 *temp, *prev;
-    int pos, i;
-    printf("\nEnter the position to delete: ");
-    scanf("%d", &pos);
-    if (start == NULL)
+        if (start == NULL)
     {
-        printf("\nUnderflow!!");
+        printf("Underflow!!");
         return;
     }
+    int pos, i;
+    printf("Enter the position to delete: ");
+    scanf("%d", &pos);
+
     temp = start;
     if (pos == 1)
     {
@@ -180,15 +181,15 @@ void deleteAtBtw()
         }
     }
     free(temp);
-    printf("\nElement deleted\n");
+    printf("Element deleted");
 }
 
 int menu()
 {
     int choice;
+        printf("\n  Menu  \n1. Display \n2. Insert at begin \n3. Insert at end \n4. Insert in between \n5. Delete at begin \n6. Delete at end \n7. Delete in between \n8. Exit");
     while (1)
     {
-        printf("\n\n  Menu  \n1. Display \n2. Insert at begin \n3. Insert at end \n4. Insert in between \n5. Delete at begin \n6. Delete at end \n7. Delete in between \n8. Exit\n");
         printf("\nEnter the choice: ");
         scanf("%d", &choice);
         switch (choice)
@@ -215,10 +216,10 @@ int menu()
             deleteAtBtw();
             break;
         case 8:
-            printf("\nThank you for using!!\n");
+            printf("Thank you for using!!\n");
             return 0;
         default:
-            printf("\nInvalid Choice!!");
+            printf("Invalid Choice!!");
             break;
         }
     }

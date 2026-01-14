@@ -12,16 +12,16 @@ void push()
     struct node *ptr = (struct node *)malloc(sizeof(struct node));
     if (ptr == NULL)
     {
-        printf("\nUnderflow!!");
+        printf("Underflow!!");
     }
 
     int val;
-    printf("\nEnter the value: ");
+    printf("Enter the value: ");
     scanf("%d", &val);
     ptr->val = val;
     ptr->next = start;
     start = ptr;
-    printf("\nItem pushed!!");
+    printf("Item pushed!!");
 }
 
 void pop()
@@ -29,7 +29,7 @@ void pop()
     struct node *ptr;
     if (start == NULL)
     {
-        printf("\nUnderflow!!");
+        printf("Underflow!!");
         return;
     }
 
@@ -38,7 +38,7 @@ void pop()
     item = start->val;
     start = start->next;
     free(ptr);
-    printf("\nItem removed!!");
+    printf("Item removed!!");
 }
 
 void display()
@@ -48,7 +48,7 @@ void display()
 
     if (ptr == NULL)
     {
-        printf("\nUnderflow!!");
+        printf("Underflow!!");
         return;
     }
 
@@ -58,15 +58,14 @@ void display()
         printf("\t%d", ptr->val);
         ptr = ptr->next;
     }
-    printf("\n");
 }
 
 void main()
 {
     int choice;
+    printf("\n  Menu \n1. Push\n2. Pop\n3. Display\n4. Exit");
     while (1)
     {
-        printf("\n  Menu  \n\n1. Push\n2. Pop\n3. Display\n4. Exit\n");
         printf("\nEnter the choice:");
         scanf("%d", &choice);
         switch (choice)
@@ -81,10 +80,10 @@ void main()
             display();
             break;
         case 4:
-            printf("\nThanks for using!!\n");
+            printf("Thanks for using!!\n");
             return;
         default:
-            printf("\nInvalid choice!!");
+            printf("Invalid choice!!");
             break;
         }
     }

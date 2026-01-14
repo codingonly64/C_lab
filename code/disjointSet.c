@@ -18,7 +18,7 @@ void makeSet()
 void display()
 {
     int i;
-    printf("\nParent Array: ");
+    printf("Parent Array: ");
     for (i = 0; i < dis.num; i++)
         printf("\t%d", dis.parent[i]);
     printf("\nRank Array: ");
@@ -58,16 +58,17 @@ int main()
     printf("\nHow many elements:");
     scanf("%d", &dis.num);
     makeSet();
-    int ch, wish;
+    char wish;
+    int ch;
+    printf("\nMENU\n1. Union\n2. Find\n3. Display\n");
     do
     {
-        printf("\nMENU\n");
-        printf("1.Union\n2.Find\n3.Display\nEnter choice:");
+        printf("Enter choice: ");
         scanf("%d", &ch);
         switch (ch)
         {
         case 1:
-            printf("\nEnter elements to perform union:");
+            printf("Enter elements to perform union:");
             scanf("%d %d", &x, &y);
             unionSet(x, y);
             break;
@@ -75,16 +76,16 @@ int main()
             printf("Enter elements to check if connected components:");
             scanf("%d %d", &x, &y);
             if (find(x) == find(y))
-                printf("Connected components\n");
+                printf("Connected components");
             else
-                printf("Not connected components\n");
+                printf("Not connected components");
             break;
         case 3:
             display();
             break;
         }
-        printf("\nDo you wish to continue?(1(yes)/0(no))\n");
-        scanf("%d", &wish);
-    } while (wish == 1);
+        printf("\nPress y to continue / Press any button to exit: ");
+        scanf(" %c", &wish);
+    } while (wish == 'y' || wish == 'Y');
     return 0;
 }

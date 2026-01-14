@@ -21,9 +21,7 @@ void printMST()
 
     printf("Edges of Minimum Spanning Tree:\n");
     for (int i = 1; i < n; i++)
-    {
         printf("Edge: %d - %d, Weight: %d\n", parent[i], i, graph[i][parent[i]]);
-    }
 }
 
 void primMST()
@@ -70,12 +68,11 @@ int main()
     printf("\n\tImplementation of Prim's Algorithm\n");
     printf("\nEnter the no. of vertices:");
     scanf("%d", &n);
-    printf("\nEnter the cost adjacency matrix:\n");
-
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < n; j++)
         {
+            printf("Enter the cost adjacency matrix of position %d, %d: ",i,j);
             scanf("%d", &graph[i][j]);
         }
     }
